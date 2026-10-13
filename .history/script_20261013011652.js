@@ -1,0 +1,46 @@
+const API_URL = "https://api.adviceslip.com/advice";
+
+const adviceId = document.getElementById("advice-id");
+const adviceText = document.getElementById("advice-text");
+const adviceButton = document.getElementById("advice-btn");
+
+// RENDER: loading
+function renderLoading() {
+  adviceText.textContent = "Loading...";
+  adviceText.classList.remove("error");
+}
+
+// RENDER: show data
+function render(slip) {
+  adviceId.textContent = slip.id;
+  adviceText.textContent = `“${slip.advice}”`;
+  adviceText.classList.remove("error");
+}
+
+// RENDER: show error
+function renderError(message) {
+  adviceText.textContent = message;
+  adviceText.classList.add("error");
+}
+
+// FETCH + STATES
+async function getAdvice() {
+  adviceButton.disabled = true;
+  renderLoading();
+
+  try {
+    const res = await fetch(API_URL);
+    if (!res.ok) throw new Error(`Status ${res.status}`);
+    const { slip } = await res.json();
+    render(slip);
+  } catch (err) {
+    console.error("Error loading advice:", err);
+    renderError("Couldn't load advice. Check your connection and try again.");
+  } finally {
+    adviceButton.disabled = false;
+  }
+}
+
+// START
+adviceButton.addEventListener("click", getAdvice);
+getAdvice();

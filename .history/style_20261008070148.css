@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light-cyan: hsl(193, 38%, 86%);    
+  --neon-green: hsl(150, 100%, 66%);  
+  --grayish-blue: hsl(217, 19%, 38%);  
+  --card-bg: hsl(217, 19%, 24%);       
+  --page-bg: hsl(218, 23%, 16%);       
+
+  --font-family: 'Manrope', sans-serif;
+  --font-weight: 800;
+  --fs-quote: 1.75rem;   
+}

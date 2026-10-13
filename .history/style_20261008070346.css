@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue-200: hsl(193, 38%, 86%);
+  --green-300: hsl(150, 100%, 66%);
+  --blue-600: hsl(217, 19%, 38%);
+  --blue-900: hsl(217, 19%, 24%);
+
+  --font-family: "Manrope", sans-serif;
+  --font-weight: 800;
+  --fs-quote: 1.75rem;
+}
+
+--green-500: hsl(171, 66%, 44%);
+--blue-100: hsl(233, 100%, 69%);
+--gray-700: hsl(210, 10%, 33%);
+--gray-500: hsl(201, 11%, 66%);
